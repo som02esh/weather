@@ -7,18 +7,36 @@
     <!-- <link rel="stylesheet" href="styles.css">
      -->
      <style>
-        body {
+      body {
     font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
+    max-width: 600px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
     text-align: center;
-    margin-top: 50px;
+}
+
+.search-container {
+    text-align: center;
+    margin-bottom: 20px;
 }
 
 input[type="text"] {
     padding: 10px;
     font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
 }
 
 button {
@@ -29,24 +47,39 @@ button {
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border-radius: 5px;
 }
 
 button:hover {
     background-color: #0056b3;
 }
 
-#weatherData {
-    margin-top: 20px;
-    font-size: 18px;
+.weather-card {
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+
+.weather-card h2 {
+    text-align: center;
+}
+
+.weather-card p {
+    margin: 10px 0;
+}
+
 
      </style>
 </head>
 <body>
     <div class="container">
-        <input type="text" id="cityInput" placeholder="Enter city name">
-        <button onclick="getWeather()">Get Weather</button>
-        <div id="weatherData"></div>
+        <h1>Weather App</h1>
+        <div class="search-container">
+            <input type="text" id="cityInput" placeholder="Enter city name">
+            <button onclick="getWeather()">Get Weather</button>
+        </div>
+        <div id="weatherCard" class="weather-card"></div>
     </div>
     <script src="script.js"></script>
 </body>
