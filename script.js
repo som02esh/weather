@@ -5,14 +5,10 @@ function getWeather() {
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`)
         .then(response => response.json())
         .then(data => {
-            const weatherCard = document.getElementById('weatherCard');
-            weatherCard.innerHTML = `
-                <div class="weather-card">
-                    <h2>Weather in ${data.name}</h2>
-                    <p>Temperature: ${data.main.temp}°C</p>
-                    <p>Description: ${data.weather[0].description}</p>
-                </div>
-            `;
+          
+            document.getElementById('name').innerHTML="Weather in "+data.name
+            document.getElementById('temp').innerHTML=data.main.temp+"°C"
+            document.getElementById('desc').innerHTML=data.weather[0].description
         })
         .catch(error => {
             console.error('Error fetching weather data:', error);
